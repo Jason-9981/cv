@@ -1,234 +1,1267 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jason Chow | Resume</title>
-    <meta name="description" content="Jason Chow personal resume portfolio in cyber style" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="noise"></div>
-    <div class="grid-bg"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>周志榮 (Chow Chi Wing, Jason) — 個人履歷 | Professional Resume</title>
+  <style>
+    :root {
+      --primary: #003366; /* Classic Deep Navy */
+      --primary-hover: #002244;
+      --primary-light: #e0f2fe;
+      --accent-green: #059669; /* Safety & Discipline */
+      --accent-green-bg: #ecfdf5;
+      --accent-amber: #d97706; /* Licences & Highlights */
+      --accent-amber-bg: #fffbeb;
+      --accent-purple: #7c3aed; /* AI & Tech */
+      --accent-purple-bg: #f5f3ff;
+      --bg-main: #f1f5f9;
+      --bg-card: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #334155;
+      --text-sub: #64748b;
+      --border-color: #cbd5e1;
+      --border-light: #e2e8f0;
+      --radius: 12px;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
 
-    <header class="topbar">
-      <div class="brand">
-        <div class="brand-mark">&lt;/&gt;</div>
-        <span>CYBERPROFILE</span>
-      </div>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-      <div class="header-right">
-        <nav class="main-nav">
-          <a href="#about" data-i18n="nav.about">About</a>
-          <a href="#experience" data-i18n="nav.experience">Experience</a>
-          <a href="#education" data-i18n="nav.education">Education</a>
-          <a href="#skills" data-i18n="nav.skills">Skills</a>
-          <a href="#contact" data-i18n="nav.contact">Contact</a>
-        </nav>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "PingFang HK", sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 24px 16px;
+    }
 
-        <div class="lang-switcher" aria-label="Language switcher">
-          <button class="lang-btn active" data-lang="en">EN</button>
-          <button class="lang-btn" data-lang="zh">中文</button>
-        </div>
-      </div>
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+    }
 
-      <a class="cta" href="#contact" data-i18n="nav.hire">Hire Me</a>
-    </header>
+    /* Header Profile Card */
+    header {
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
 
-    <main>
-      <section class="hero" id="about">
-        <div class="hero-copy">
-          <p class="eyebrow" data-i18n="hero.eyebrow">IT SUPPORT SPECIALIST // SYSTEMS ENGINEER</p>
-          <h1 data-i18n="hero.title">
-            BUILDING<br />
-            <span class="highlight">RELIABLE</span>
-            SYSTEMS<br />
-            FOR EVERYDAY SUCCESS.
+    .header-content {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .profile-photo {
+      width: 125px;
+      height: 160px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 3px solid #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 51, 102, 0.15);
+      background-color: #e2e8f0;
+      flex-shrink: 0;
+    }
+
+    .profile-info {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .name-title h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .name-title h1 .en-name {
+      font-size: 20px;
+      color: #2563eb;
+      font-weight: 600;
+    }
+
+    .name-title p.role-title {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    .name-title p.role-sub {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-top: 2px;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 13px;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      border: 1px solid var(--primary);
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+    }
+    .btn-outline:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: #93c5fd;
+    }
+
+    .lang-btn-group {
+      display: inline-flex;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .lang-btn {
+      padding: 6px 12px;
+      font-size: 12.5px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      color: var(--text-sub);
+      font-weight: 500;
+      transition: all 0.15s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .meta-item strong {
+      color: var(--text-main);
+    }
+
+    /* Core Highlights Banner */
+    .highlights-banner {
+      background: linear-gradient(90deg, #f0fdf4 0%, #f8fafc 50%, #eff6ff 100%);
+      border: 1px solid #cbd5e1;
+      border-left: 5px solid var(--primary);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 18px;
+      font-size: 13.5px;
+    }
+
+    .highlights-banner strong {
+      color: var(--primary);
+    }
+
+    .highlights-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      border: 1px solid transparent;
+    }
+
+    .badge-blue {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: #bae6fd;
+    }
+
+    .badge-green {
+      background: var(--accent-green-bg);
+      color: var(--accent-green);
+      border-color: #a7f3d0;
+    }
+
+    .badge-amber {
+      background: var(--accent-amber-bg);
+      color: var(--accent-amber);
+      border-color: #fde68a;
+    }
+
+    .badge-purple {
+      background: var(--accent-purple-bg);
+      color: var(--accent-purple);
+      border-color: #ddd6fe;
+    }
+
+    /* Section Cards */
+    .section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--border-light);
+      padding-bottom: 10px;
+    }
+
+    .section-header h2 {
+      font-size: 17.5px;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-header h2::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    /* Collapsible Details */
+    details {
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      margin-bottom: 12px;
+      background: #ffffff;
+      transition: all 0.2s ease;
+      overflow: hidden;
+    }
+
+    details:hover {
+      border-color: #93c5fd;
+    }
+
+    details[open] {
+      border-color: #60a5fa;
+      box-shadow: var(--shadow-sm);
+    }
+
+    summary {
+      padding: 14px 18px;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--text-main);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      background: #fafafa;
+      transition: background-color 0.15s ease;
+    }
+
+    details[open] summary {
+      background: #f0f7ff;
+      border-bottom: 1px solid #e0e7ff;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      font-size: 18px;
+      font-weight: 600;
+      color: #2563eb;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    details[open] summary::after {
+      content: "−";
+      color: var(--primary);
+      background: #dbeafe;
+    }
+
+    .detail-body {
+      padding: 14px 18px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      background: #ffffff;
+    }
+
+    .detail-body ul {
+      padding-left: 20px;
+      margin-top: 6px;
+    }
+
+    .detail-body li {
+      margin-bottom: 8px;
+    }
+
+    .text-zh {
+      display: block;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .text-en {
+      display: block;
+      color: #475569;
+      font-size: 12.5px;
+      margin-top: 1px;
+      font-style: italic;
+    }
+
+    body.lang-zh-only .text-en { display: none !important; }
+    body.lang-en-only .text-zh { display: none !important; }
+
+    .summary-left {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding-right: 12px;
+    }
+
+    .summary-title {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .summary-sub {
+      font-size: 12.5px;
+      font-weight: 400;
+      color: var(--text-sub);
+    }
+
+    .summary-date {
+      font-size: 12px;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      white-space: nowrap;
+      margin-right: 10px;
+    }
+
+    .summary-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Video Player */
+    .video-card {
+      background: #0f172a;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+      color: #ffffff;
+      margin-top: 10px;
+    }
+
+    .video-wrapper {
+      max-width: 300px;
+      margin: 12px auto;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      aspect-ratio: 9 / 16;
+      background: #000000;
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 0 12px 0;
+      font-size: 12.5px;
+      color: var(--text-sub);
+    }
+
+    /* Print Stylesheet */
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+        color: #000000;
+      }
+      .container {
+        max-width: 100%;
+      }
+      header, .section-card {
+        box-shadow: none;
+        border: 1px solid #cbd5e1;
+        padding: 16px 20px;
+        margin-bottom: 12px;
+        page-break-inside: avoid;
+      }
+      .header-actions, #toggleAllBtn, .lang-btn-group, footer, .video-card {
+        display: none !important;
+      }
+      details {
+        border: 1px solid #cbd5e1 !important;
+        page-break-inside: avoid;
+      }
+      details[open], details:not([open]) {
+        display: block !important;
+      }
+      summary {
+        background: #f8fafc !important;
+      }
+      summary::after {
+        display: none !important;
+      }
+      .detail-body {
+        display: block !important;
+      }
+    }
+  </style>
+</head>
+<body class="lang-both">
+
+<div class="container">
+
+  <!-- Header Profile Card -->
+  <header>
+    <div class="header-content">
+      <!-- Profile Picture -->
+      <img src="profile.jpg" alt="周志榮 (Jason Chow)" class="profile-photo">
+      
+      <div class="profile-info">
+        <div class="name-title">
+          <h1>
+            <span class="text-zh">周志榮</span>
+            <span class="en-name">Chow Chi Wing (Jason)</span>
           </h1>
-          <p class="intro" data-i18n="hero.intro">
-            After graduating from secondary school, I developed a strong passion for computer hardware, software, and all kinds of technology, which has remained with me throughout my life and career.
+          <p class="role-title">
+            <span class="text-zh">系統支援技術副主任 | 營運管理與 AI 工具應用專才</span>
+            <span class="text-en">System Support Assistant Supervisor | Operations & AI Tool Specialist</span>
           </p>
-
-          <div class="hero-actions">
-            <a href="#experience" class="primary-btn" data-i18n="hero.primaryBtn">View Experience</a>
-            <a href="#contact" class="ghost-btn" data-i18n="hero.secondaryBtn">Contact</a>
-          </div>
-
-          <div class="stats-row">
-            <div class="stat-box">
-              <strong data-count="10">0</strong>
-              <span data-i18n="stats.years">+ Years Experience</span>
-            </div>
-            <div class="stat-box">
-              <strong data-count="8">0</strong>
-              <span data-i18n="stats.support">Support Areas</span>
-            </div>
-            <div class="stat-box">
-              <strong data-count="100">0</strong>
-              <span data-i18n="stats.clients">Client Care</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-panel">
-          <div class="panel-shell">
-            <div class="panel-header">
-              <span class="dot red"></span>
-              <span class="dot yellow"></span>
-              <span class="dot green"></span>
-              <span class="panel-title">profile.system</span>
-            </div>
-
-            <div class="profile-card">
-              <div class="portrait-wrap">
-                <div class="portrait-glow"></div>
-                <img src="jc.jpeg" alt="Jason Chow portrait" class="portrait" />
-              </div>
-              <h3>Jason Chow</h3>
-              <p data-i18n="profile.role">System Support Assistant Supervisor</p>
-              <ul>
-                <li data-i18n="profile.item1">Network Planning & Deployment</li>
-                <li data-i18n="profile.item2">Hardware & Software Support</li>
-                <li data-i18n="profile.item3">Retail Systems & Remote Support</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section intro-story" id="story">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="about.eyebrow">ABOUT ME</p>
-          <h2 data-i18n="about.title">Self Introduction</h2>
-        </div>
-        <div class="story-card">
-          <p data-i18n="about.text">
-            After graduating from secondary school, I developed a strong passion for computer hardware, software, and all technological products. I have always enjoyed the excitement and practical value that technology brings to everyday life and work. I have worked in the computer industry for more than ten years, covering software and hardware setup and development for many company systems. I have supported retail businesses by providing retail systems, daily network installation, and practical advice. My daily responsibilities are focused on delivering hardware and software support services to these retail stores. Whether during workdays or holidays, I remain in close contact with customers and provide support to answer their questions. If issues cannot be resolved through simple communication, I often use remote support to resolve most problems efficiently. In some cases, I also need to visit their premises directly to provide onsite support. Over the years, I have been deeply appreciated and cared for by my clients. I am now eager to step out of my comfort zone, learn more, and take on new opportunities. I sincerely hope to connect, exchange ideas, and explore future collaboration with you. Thank you for reading this. I would be grateful for the opportunity to work together.
+          <p class="role-sub">
+            <span class="text-zh">逾20年系統維護、現場應變、安全合規經驗；熟練運用 Gemini、VS Code、GitHub 等 AI 工具賦能工作</span>
+            <span class="text-en">20+ Years in System Operations, Safety Compliance & Emergency Response; Skilled in Gemini, VS Code & GitHub</span>
           </p>
         </div>
-      </section>
 
-      <section class="section" id="experience">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="experience.eyebrow">CAREER HISTORY</p>
-          <h2 data-i18n="experience.title">Experience</h2>
-        </div>
-
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="time-tag">Nov 2001 — Present</div>
-            <div class="timeline-content">
-              <h3 data-i18n="experience.role1">System Support Assistant Supervisor</h3>
-              <p class="meta" data-i18n="experience.meta1">FENIX LOGISTIC SERVICES LIMITED</p>
-              <ul class="bullet-list">
-                <li data-i18n="experience.item1">Network deployment and planning</li>
-                <li data-i18n="experience.item2">Hardware and software support</li>
-                <li data-i18n="experience.item3">Network equipment support and maintenance</li>
-                <li data-i18n="experience.item4">Client requirement analysis and solutions</li>
-                <li data-i18n="experience.item5">Equipment procurement consultation</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="education">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="education.eyebrow">EDUCATION</p>
-          <h2 data-i18n="education.title">Education</h2>
-        </div>
-
-        <div class="education-box">
-          <div class="edu-card">
-            <h3 data-i18n="education.degree">Bachelor of Computer</h3>
-            <p class="meta" data-i18n="education.school">Hong Kong Metropolitan University</p>
-            <p data-i18n="education.period">Sep 2014 — Aug 2018</p>
-            <p data-i18n="education.note">Computer/Information Technology Administration and Management</p>
-            <ul class="bullet-list compact">
-              <li>COMP S356 — Software Engineering and Project Management (B)</li>
-              <li>IT S234 — Web Site Design (B-)</li>
-              <li>COMP S258 — Computer Programming and Problem Solving (B+)</li>
-              <li>COMP S359 — Relational Database: Theory & Practice (B)</li>
-            </ul>
-            <p class="grade-text" data-i18n="education.grade">Grade: Degree Awarded</p>
+        <div class="header-actions">
+          <!-- Language Selector -->
+          <div class="lang-btn-group">
+            <button class="lang-btn active" onclick="setLang('both')">中英對照</button>
+            <button class="lang-btn" onclick="setLang('zh')">中文</button>
+            <button class="lang-btn" onclick="setLang('en')">English</button>
           </div>
 
-          <div class="edu-card">
-            <h3 data-i18n="education.certTitle">Professional Certificate in Webpage Design & Programming</h3>
-            <p class="meta" data-i18n="education.certSchool">Hong Kong Institute of Vocational Education (Kwun Tong)</p>
-            <p data-i18n="education.certPeriod">Sep 2021</p>
+          <button id="toggleAllBtn" class="btn btn-outline" onclick="toggleAllDetails()">全部展開</button>
+          <button class="btn btn-primary" onclick="window.print()">列印履歷 / Print</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact & Meta Information -->
+    <div class="meta-grid">
+      <div class="meta-item">
+        <span class="text-zh"><strong>出生年份：</strong> 1977年 (49歲) | 已婚</span>
+        <span class="text-en"><strong>Year of Birth:</strong> 1977 (Age 49) | Married</span>
+      </div>
+      <div class="meta-item">
+        <span class="text-zh"><strong>聯絡電郵：</strong> jasonchow739hk@yahoo.com.hk</span>
+        <span class="text-en"><strong>Email:</strong> jasonchow739hk@yahoo.com.hk</span>
+      </div>
+      <div class="meta-item">
+        <span class="text-zh"><strong>居住地區：</strong> 香港</span>
+        <span class="text-en"><strong>Location:</strong> Hong Kong</span>
+      </div>
+      <div class="meta-item">
+        <span class="text-zh"><strong>駕駛執照：</strong> 香港 1, 2, 3, 22 號</span>
+        <span class="text-en"><strong>Driving License:</strong> HK Classes 1, 2, 3, 22</span>
+      </div>
+      <div class="meta-item">
+        <span class="text-zh"><strong>個人網頁：</strong> <a href="https://jason-9981.github.io/cv/" target="_blank" style="color:var(--primary);">jason-9981.github.io/cv/</a></span>
+        <span class="text-en"><strong>Portfolio:</strong> <a href="https://jason-9981.github.io/cv/" target="_blank" style="color:var(--primary);">jason-9981.github.io/cv/</a></span>
+      </div>
+      <div class="meta-item">
+        <span class="text-zh"><strong>領英檔案：</strong> <a href="https://www.linkedin.com/in/jason-chow-68244957" target="_blank" style="color:var(--primary);">LinkedIn Profile</a></span>
+        <span class="text-en"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jason-chow-68244957" target="_blank" style="color:var(--primary);">linkedin.com/in/jason-chow-68244957</a></span>
+      </div>
+    </div>
+
+    <!-- Universal Competencies Banner -->
+    <div class="highlights-banner">
+      <span class="text-zh"><strong>核心特質與專業資格 (Core Competencies & Qualifications)：</strong></span>
+      <span class="text-en"><strong>Key Attributes & Professional Qualifications:</strong></span>
+      <div class="highlights-tags">
+        <span class="badge badge-purple">AI 科技工具應用 (Gemini / VS Code / GitHub)</span>
+        <span class="badge badge-green">急救救援與安全意識 (救生員銅章資格)</span>
+        <span class="badge badge-amber">香港駕駛執照 (1, 2, 3, 22 號)</span>
+        <span class="badge badge-blue">嚴格守時紀律與輪班抗壓能力</span>
+        <span class="badge badge-purple">電腦學學士學位 (HKMU)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- AI & Modern Technology Section -->
+  <section class="section-card">
+    <div class="section-header">
+      <h2>
+        <span class="text-zh">AI 人工智能與現代科技應用 (AI & Modern Digital Tools)</span>
+        <span class="text-en">AI Productivity & Digital Work Tools</span>
+      </h2>
+    </div>
+
+    <!-- AI Tool 1: Gemini & LLMs -->
+    <details open>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">1. 生成式 AI 工具賦能工作 (Generative AI for Workplace Productivity)</span>
+            <span class="text-en">1. Leveraging Generative AI (Google Gemini & LLMs)</span>
+          </span>
+          <span class="summary-sub">
+            <span class="text-zh">熟練運用 Google Gemini 進行資料梳理、流程排解、文檔編寫與決策輔助</span>
+            <span class="text-en">Proficient in Google Gemini for data synthesis, workflow optimization, and rapid documentation</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="badge badge-purple">AI 增效</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh">運用 Google Gemini 等先進生成式 AI 工具，快速分析營運數據、草擬雙語業務通告與技術報告，大幅縮短文書處理時間，倍增行政與營運效能。</span>
+            <span class="text-en">Utilize Google Gemini and modern AI assistants to synthesize operational data, draft bilingual correspondence, and troubleshoot procedures, multiplying workplace efficiency.</span>
+          </li>
+          <li>
+            <span class="text-zh">結合 AI 進行突發事件應對方案設計、SOP 標準作業程序優化與跨部門協調指引制定。</span>
+            <span class="text-en">Employ AI for rapid problem analysis, standard operating procedure (SOP) refinement, and cross-departmental coordination plans.</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- AI Tool 2: VS Code & GitHub -->
+    <details open>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">2. 現代化開發與版本控制 (VS Code & GitHub Workflow)</span>
+            <span class="text-en">2. Modern Development & Version Control (VS Code & GitHub)</span>
+          </span>
+          <span class="summary-sub">
+            <span class="text-zh">運用 Visual Studio Code 與 GitHub 管理專案程式碼、自動化部署與技術文檔</span>
+            <span class="text-en">Utilizing VS Code and GitHub for modern project management, CI/CD, and web deployment</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="badge badge-blue">開發工具</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh">熟練操作 Visual Studio Code 作為主力開發與文字編輯環境，整合 AI 編程擴充套件輔助代碼撰寫與腳本調試。</span>
+            <span class="text-en">Skilled in Visual Studio Code as primary development environment, integrating AI-assisted extensions for scripting and rapid debugging.</span>
+          </li>
+          <li>
+            <span class="text-zh">掌握 GitHub 版本控制、分支管理與 GitHub Pages 雲端靜態網站部署，保持技術敏捷度與現代化 IT 管理思維。</span>
+            <span class="text-en">Proficient in GitHub repository management, version control, and GitHub Pages automated hosting for digital presentation and deployment.</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- Core Strengths -->
+  <section class="section-card">
+    <div class="section-header">
+      <h2>
+        <span class="text-zh">個人綜合素質與核心優勢 (Core Strengths & Professional Attributes)</span>
+        <span class="text-en">Core Strengths & Professional Attributes</span>
+      </h2>
+    </div>
+
+    <!-- 1. Safety & Emergency Response -->
+    <details open>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">1. 高度安全防範與危機應變 (Safety Consciousness & Crisis Response)</span>
+            <span class="text-en">1. Safety Mindset, Emergency First Response & Lifesaving Background</span>
+          </span>
+          <span class="summary-sub">
+            <span class="text-zh">持香港拯溺總會銅章及英國皇家拯溺會證書，受過嚴格急救與水上救援實戰訓練</span>
+            <span class="text-en">Certified Lifeguard (Bronze Medallion) with proven first-aid resuscitation and crisis intervention skills</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="badge badge-green">安全救護</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh">持有香港拯救水上安全總會銅章及英國皇家拯溺會 (RLSS) 能力證書，熟悉心肺復甦 (CPR) 及緊急救援程序，在高壓危急關頭能保持沉著、果斷執行應變保護公眾。</span>
+            <span class="text-en">Hold HKLSS Bronze Medallion and RLSS certifications with practical training in CPR and emergency rescue, maintaining composure and decisive judgment under severe pressure.</span>
+          </li>
+          <li>
+            <span class="text-zh">長年主理企業核心系統與設備維護，將安全合規深植於日常作業，具備敏銳的風險識別與事故防範本能。</span>
+            <span class="text-en">Decades of managing mission-critical enterprise infrastructure, upholding strict adherence to safety compliance and preventative hazard control.</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 2. Punctuality & Discipline -->
+    <details open>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">2. 嚴格守時紀律與抗壓適應力 (Punctuality, Discipline & Stress Management)</span>
+            <span class="text-en">2. Punctuality, High Discipline & Shift Adaptability</span>
+          </span>
+          <span class="summary-sub">
+            <span class="text-zh">紀律嚴明，百分之百嚴格遵循標準作業程序 (SOP)；適應早晚輪班與惡劣天氣當值</span>
+            <span class="text-en">Disciplined, strict adherence to SOPs; ready for round-the-clock shift duties</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="badge badge-blue">紀律守時</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh">以極高的守時態度著稱，長年保持良好出勤紀錄；能完全適應早晚輪班、通宵工作安排以及在惡劣天氣條件下堅守崗位。</span>
+            <span class="text-en">Renowned for strict punctuality and dependable attendance; fully prepared for 24/7 rotating shift duties and severe weather standby.</span>
+          </li>
+          <li>
+            <span class="text-zh">具備工程人員的邏輯思維，嚴格遵守機構規章、指揮指令與標準作業程序（SOP），以零失誤態度落實各項工作。</span>
+            <span class="text-en">Meticulous in executing administrative rules, operational orders, and standard operating procedures with a zero-error mindset.</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 3. Driving License & Road Awareness -->
+    <details open>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">3. 多類別車輛操作與敏銳路面警覺 (Driving Experience & Spatial Alertness)</span>
+            <span class="text-en">3. Multi-Class Driving Licenses & Dynamic Environmental Awareness</span>
+          </span>
+          <span class="summary-sub">
+            <span class="text-zh">持香港 1, 2, 3, 22 號駕照（私家車、輕型貨車、電單車、機動三輪車）</span>
+            <span class="text-en">Holding HK Driving Classes 1, 2, 3, 22; defensive driving habits and spatial alertness</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="badge badge-amber">駕駛執照</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh">持有多類別香港駕駛執照，熟悉香港道路法規，具備良好的車輛機械操控感與空間距離判斷能力。</span>
+            <span class="text-en">Experienced driver across multiple vehicle categories with acute spatial judgment and thorough understanding of HK traffic regulations.</span>
+          </li>
+          <li>
+            <span class="text-zh">具備預防性防禦觀察習慣，行車及執勤時時刻保持高度集中，警惕四周行人與動態路況盲區。</span>
+            <span class="text-en">Maintains proactive defensive driving observation, staying highly focused on dynamic pedestrian movements and situational blind spots.</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 4. Frontline Service & Team Communication -->
+    <details open>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">4. 前線應對溝通與化解爭議能力 (Frontline Communication & Conflict Resolution)</span>
+            <span class="text-en">4. Public Communication, Active Listening & Conflict Resolution</span>
+          </span>
+          <span class="summary-sub">
+            <span class="text-zh">逾20年支援零售前線門市與跨部門協同，善於耐心安撫情緒、解決求助者問題</span>
+            <span class="text-en">Decades of frontline support, proficient in active listening, de-escalating tension, and public engagement</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="badge badge-purple">溝通協調</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh">長年為各區前線零售門市提供即時技術支援與諮詢，善於以同理心傾聽、安撫焦慮求助者，並以清晰易明的語言給予指示。</span>
+            <span class="text-en">Decades of providing responsive support to front-line branch staff, skilled in empathetic listening, alleviating caller distress, and delivering clear directions.</span>
+          </li>
+          <li>
+            <span class="text-zh">具備良好的團隊合作意識與公眾服務熱誠，能與不同階層人員融洽配合，高效執行任務。</span>
+            <span class="text-en">Strong team spirit and passion for public service, collaborating seamlessly with diverse stakeholders and teammates.</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 5. Academic Perseverance -->
+    <details>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">5. 半工讀進修歷程與堅毅自律 (Continuous Learning & Perseverance)</span>
+            <span class="text-en">5. Dedication to Self-Improvement & Continuous Learning</span>
+          </span>
+          <span class="summary-sub">
+            <span class="text-zh">白天全職工作、夜間進修，由基礎文憑堅持完成至取得電腦學學士學位</span>
+            <span class="text-en">Demonstrated self-discipline by earning a Bachelor's degree through evening studies while working full-time</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="badge badge-blue">堅毅求進</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh">憑藉自律與堅定毅力，在全職工作之餘完成夜校進修，一步一腳印取得香港都會大學電腦學學士學位。</span>
+            <span class="text-en">Demonstrated outstanding perseverance and time management by completing night school education up to a Bachelor of Computing from HKMU.</span>
+          </li>
+          <li>
+            <span class="text-zh">熱愛學習新知識，具備極高的新技能與新設備吸收能力，能迅速掌握各類新式作業系統。</span>
+            <span class="text-en">Enthusiastic about acquiring new knowledge with high learning agility, rapidly mastering new operational equipment and technologies.</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- Career Path -->
+  <section class="section-card">
+    <div class="section-header">
+      <h2>
+        <span class="text-zh">工作經歷 (Career Path)</span>
+        <span class="text-en">Professional Work Experience</span>
+      </h2>
+    </div>
+
+    <!-- Job 1 -->
+    <details open>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">系統支援技術副主任 — 威黃物流服務有限公司</span>
+            <span class="text-en">System Support Assistant Supervisor — Fenix Logistic Services Ltd.</span>
+          </span>
+          <span class="summary-sub">
+            <span class="text-zh">跨據點核心系統、零售 POS 與辦公室 IT 運作統籌 (全職)</span>
+            <span class="text-en">Full-time management of enterprise systems, retail POS networks & IT operations</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="summary-date">2006/01 — Present (20+ yrs)</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh">全面主理內部核心物流系統、POS 零售網絡及辦公室資訊架構，保障各分店及企業日常運作無中斷。</span>
+            <span class="text-en">Oversee corporate enterprise logistics systems, retail POS networks, and office infrastructure to ensure 24/7 business continuity.</span>
+          </li>
+          <li>
+            <span class="text-zh">於節假日及銷售高峰期提供全天候高壓應急值守，迅速排除突發軟硬件故障，維持系統極高可用度。</span>
+            <span class="text-en">Provide on-call emergency response during holiday peak periods, resolving hardware/software breakdowns with minimal downtime.</span>
+          </li>
+          <li>
+            <span class="text-zh">制定並嚴格落實網絡安全政策、使用者權限控制與標準作業指引（SOP），統籌跨部門溝通、外判商管理及前線員工培訓。</span>
+            <span class="text-en">Formulate and enforce security protocols, access control, and SOPs; coordinate cross-functional teams, vendor contracts, and staff training.</span>
+          </li>
+          <li>
+            <span class="text-zh">主動導入生成式 AI 與自動化工具，優化業務通知與支援工作流程。</span>
+            <span class="text-en">Proactively introduce generative AI and automation tools to streamline business communications and support workflows.</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Job 2 -->
+    <details>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">系統工程師 — 威黃物流服務有限公司</span>
+            <span class="text-en">System Engineer — Fenix Logistic Services Ltd.</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="summary-date">2004/08 — 2005/12</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh">跨部門協同維護各零售據點之網絡設備、伺服器及終端周邊，確保各項設備運作合規。</span>
+            <span class="text-en">Collaborated across departments to maintain retail store servers, network equipment, and peripherals in compliance with safety standards.</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Job 3 -->
+    <details>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">物流助理文員 — 威黃物流服務有限公司</span>
+            <span class="text-en">Logistics Assistant / Inventory Clerk — Fenix Logistic Services Ltd.</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="summary-date">2001/11 — 2004/07</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh">恪守嚴格守時與精準度要求，管理貨品庫存追蹤及物流文件，確保出貨數據分毫不差。</span>
+            <span class="text-en">Maintained strict schedule adherence and precision in managing warehouse inventory records and logistics documentation.</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Job 4 -->
+    <details>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">倉務文員 — 細華電子有限公司</span>
+            <span class="text-en">Warehouse Clerk — Sai Wah Electronics Ltd.</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="summary-date">2000/10 — 2001/08</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh">記錄維護電子料件進出日誌，嚴格遵循倉庫職業安全健康指引與定時盤點。</span>
+            <span class="text-en">Maintained electronic stock dispatch logs with strict compliance to occupational safety standards in warehouse operations.</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Job 5 -->
+    <details>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">救生員 — 力霸救生員公司</span>
+            <span class="text-en">Lifeguard — Lik Ba Lifeguard Company</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="summary-date">1995/09 — 1997/03</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh">維持泳池場地水上安全秩序，時刻保持高度警覺；於突發危急情況下迅速執行救援與急救，守護泳客生命安全。</span>
+            <span class="text-en">Maintained vigilant pool safety oversight, performed emergency rescues, and administered CPR under high-stress conditions.</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Job 6 -->
+    <details>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">售貨員 — 德士活有限公司</span>
+            <span class="text-en">Salesperson — Texwood Limited</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="summary-date">1994/12 — 1995/07</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh">提供優質親切的前線顧客服務，處理收銀零售交易及商品陳列，建立良好人際應對溝通能力。</span>
+            <span class="text-en">Delivered courteous customer service, handled retail cash transactions, and resolved customer inquiries.</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- Education -->
+  <section class="section-card">
+    <div class="section-header">
+      <h2>
+        <span class="text-zh">學歷背景 (Education)</span>
+        <span class="text-en">Academic Qualifications</span>
+      </h2>
+    </div>
+
+    <!-- Edu 1 -->
+    <details open>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">香港都會大學 (Hong Kong Metropolitan University / 前香港公開大學)</span>
+            <span class="text-en">Hong Kong Metropolitan University (HKMU)</span>
+          </span>
+          <span class="summary-sub">
+            <span class="text-zh">電腦學學士 (Bachelor of Computing) — 學位頒發</span>
+            <span class="text-en">Bachelor of Computing (Degree Awarded)</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="summary-date">2014/09 — 2018/08</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh">主修方向：電腦及資訊科技管理 (Computer/IT Administration & Management)。</span>
+            <span class="text-en">Concentration: Computer and IT Administration & Management.</span>
+          </li>
+          <li>
+            <span class="text-zh">核心代表科目：軟件工程與項目管理 (COMP S356, B)、電腦編程與問題求解 (COMP S258, B+)、關聯式數據庫理論與實踐 (COMP S359, B)、網頁設計 (IT S234, B-)。</span>
+            <span class="text-en">Key Modules: Software Engineering & Project Management (B), Programming & Problem Solving (B+), Relational Database (B), Web Site Design (B-).</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Edu 2 -->
+    <details>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">香港專業教育學院 (IVE 青衣分校)</span>
+            <span class="text-en">Hong Kong Institute of Vocational Education (IVE Tsing Yi)</span>
+          </span>
+          <span class="summary-sub">
+            <span class="text-zh">資訊及通訊科技高級文憑 (良好 / Credit)</span>
+            <span class="text-en">Higher Diploma in ICT (Awarded with Credit)</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="summary-date">2011/09 — 2013/07</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh">夜間兼讀制進修，修畢68單元值；同系列前期獲頒：資訊及通訊科技文憑 (2010–2011)、資訊及通訊科技證書 (2009–2010)。</span>
+            <span class="text-en">Completed 68 unit credits via part-time study. Preceded by Diploma in ICT (2010-2011) and Certificate in ICT (2009-2010).</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Edu 3 -->
+    <details>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">香港專業教育學院 (IVE 李惠利分校)</span>
+            <span class="text-en">IVE (Lee Wai Lee Campus)</span>
+          </span>
+          <span class="summary-sub">
+            <span class="text-zh">基礎文憑 (Foundation Diploma)</span>
+            <span class="text-en">Foundation Diploma (including Vocational English HKVEP Level 2 Grade C)</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="summary-date">2007/07 — 2008/07</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh">包含香港職業英語計劃認證 (HKVEP Level 2, Grade C)。</span>
+            <span class="text-en">Included completion of Hong Kong Vocational English Programme (HKVEP Level 2, Grade C).</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Edu 4 -->
+    <details>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">中華傳道會李賢堯紀念中學</span>
+            <span class="text-en">C.N.E.C. Lee I Yao Memorial Secondary School</span>
+          </span>
+          <span class="summary-sub">
+            <span class="text-zh">中五學歷 (HKCEE 香港中學會考)</span>
+            <span class="text-en">Form 5 Secondary Education (HKCEE)</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="summary-date">1989 — 1994</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh">香港中學會考合格科目：中文 (E)、數學 (E)、英文打字 (D)、美術 (D)。</span>
+            <span class="text-en">HKCEE Passes: Chinese (E), Mathematics (E), English Typewriting (D), Art (D).</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- Certifications -->
+  <section class="section-card">
+    <div class="section-header">
+      <h2>
+        <span class="text-zh">專業資格與證書 (Certifications)</span>
+        <span class="text-en">Professional Credentials & Safety Certifications</span>
+      </h2>
+    </div>
+
+    <!-- Safety -->
+    <details open>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">救生、急救與安全認證 (Lifesaving & Safety Certifications)</span>
+            <span class="text-en">Lifesaving, First Response & Safety Qualifications</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="badge badge-green">安全資格</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh"><strong>香港拯救水上安全總會 / 香港拯溺總會：</strong> 銅章救生員 (Bronze Medallion, 1998)</span>
+            <span class="text-en"><strong>Hong Kong Life Saving Society:</strong> Bronze Medallion Certified Lifeguard (1998)</span>
+          </li>
+          <li>
+            <span class="text-zh"><strong>英國皇家拯溺會 (RLSS / HKLGC)：</strong> 拯溺能力證書 (Certificate of Proficiency in Rescue & Resuscitation, 1995)</span>
+            <span class="text-en"><strong>Royal Life Saving Society:</strong> Certificate of Proficiency in Lifesaving & Resuscitation (1995)</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Professional Skills -->
+    <details>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">資訊科技、商務與專業研習 (IT, Business & Vocational Training)</span>
+            <span class="text-en">Technical, Business & Vocational Certifications</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="badge badge-purple">專業技能</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <ul>
+          <li>
+            <span class="text-zh"><strong>香港專業教育學院 (觀塘分校)：</strong> 網頁設計及程式編寫專業證書 (2001)</span>
+            <span class="text-en"><strong>IVE (Kwun Tong):</strong> Professional Certificate in WebPage Design & Programming (2001)</span>
+          </li>
+          <li>
+            <span class="text-zh"><strong>UNiSOFT 教育中心：</strong> MCSA + MCSE 網絡工程師 2003 - Messaging (2004)</span>
+            <span class="text-en"><strong>UNiSOFT Education Centre:</strong> MCSA + MCSE Network Engineer 2003 (2004)</span>
+          </li>
+          <li>
+            <span class="text-zh"><strong>思科認證 (Cisco)：</strong> CCNA - Network Fundamentals (2009)</span>
+            <span class="text-en"><strong>Cisco:</strong> CCNA - Network Fundamentals (2009)</span>
+          </li>
+          <li>
+            <span class="text-zh"><strong>英國 Pitman 考試學院：</strong> 英文打字初級第一級 (25+ wpm, 1993)</span>
+            <span class="text-en"><strong>Pitman Examinations Institute:</strong> Typewriting Elementary First Class (1993)</span>
+          </li>
+          <li>
+            <span class="text-zh"><strong>職業訓練局 (VTC)：</strong> 45小時英語基礎課程證書 (PT-EFP, 2007)</span>
+            <span class="text-en"><strong>VTC:</strong> English Foundation Programme Certificate (PT-EFP, 2007)</span>
+          </li>
+          <li>
+            <span class="text-zh"><strong>旅遊服務業培訓發展中心：</strong> 44星期中式廚務及餐飲運作課程 (2000)</span>
+            <span class="text-en"><strong>VTC Hospitality Centre:</strong> 44-Week Chinese Food & F&B Operations (2000)</span>
+          </li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- Project & Video Showcase -->
+  <section class="section-card">
+    <div class="section-header">
+      <h2>
+        <span class="text-zh">個人創作展示 (Personal Showcase)</span>
+        <span class="text-en">Creative Showcase: AI & Digital Media</span>
+      </h2>
+    </div>
+
+    <details open>
+      <summary>
+        <div class="summary-left">
+          <span class="summary-title">
+            <span class="text-zh">影音創作展示：AI 與新一代智慧物流 (Next-Gen Logistics with AI)</span>
+            <span class="text-en">Video Showcase: AI-Powered Smart Logistics</span>
+          </span>
+          <span class="summary-sub">
+            <span class="text-zh">運用生成式 AI 工具獨立構思與製作之雙語短片</span>
+            <span class="text-en">Self-directed bilingual promotional video created with generative AI tools</span>
+          </span>
+        </div>
+        <div class="summary-right">
+          <span class="badge badge-purple">AI 創作</span>
+        </div>
+      </summary>
+      <div class="detail-body">
+        <p>
+          <span class="text-zh">結合深厚物流營運實務與最新 AI 影像技術，體現科技適應力、自學精神與新思維：</span>
+          <span class="text-en">Combining practical logistics experience with generative AI technology, highlighting adaptability and digital creativity:</span>
+        </p>
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe 
+              src="https://www.youtube-nocookie.com/embed/IcGXCF8s6qY" 
+              title="AI & Logistics Short Video" 
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div style="margin-top: 10px;">
+            <a href="https://youtube.com/shorts/IcGXCF8s6qY" target="_blank" class="btn btn-primary" style="background:#dc2626; border-color:#dc2626; font-size:13px;">
+              ▶ 在 YouTube 開啟觀看 (Watch on YouTube)
+            </a>
+            <p style="font-size:11.5px; color:#94a3b8; margin-top:8px;">
+              <span class="text-zh">短片製作：周志榮 (Jason Chow) | 結合 AI 工具製作之創新短片</span>
+              <span class="text-en">Video created by Jason Chow utilizing generative AI tools.</span>
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+    </details>
+  </section>
 
-      <section class="section" id="skills">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="skills.eyebrow">SKILL MATRIX</p>
-          <h2 data-i18n="skills.title">Core Competencies</h2>
-        </div>
+  <footer>
+    <p>© 2026 周志榮 (Chow Chi Wing, Jason) · 個人專業履歷 · Professional Profile</p>
+  </footer>
 
-        <div class="skills-grid">
-          <div class="skill-card">
-            <h3 data-i18n="skills.network">Network & Support</h3>
-            <div class="chip-wrap">
-              <span>Network Deployment</span>
-              <span>Planning</span>
-              <span>Remote Support</span>
-              <span>Onsite Support</span>
-            </div>
-          </div>
+</div>
 
-          <div class="skill-card">
-            <h3 data-i18n="skills.hardware">Hardware & Software</h3>
-            <div class="chip-wrap">
-              <span>PC Setup</span>
-              <span>Software Installation</span>
-              <span>Device Maintenance</span>
-              <span>System Troubleshooting</span>
-            </div>
-          </div>
+<script>
+  let allExpanded = false;
+  function toggleAllDetails() {
+    const details = document.querySelectorAll('details');
+    const btn = document.getElementById('toggleAllBtn');
+    allExpanded = !allExpanded;
+    details.forEach(d => { d.open = allExpanded; });
+    btn.innerText = allExpanded ? '全部收起' : '全部展開';
+  }
 
-          <div class="skill-card">
-            <h3 data-i18n="skills.web">Web & IT</h3>
-            <div class="chip-wrap">
-              <span>Web Design</span>
-              <span>Programming</span>
-              <span>Database</span>
-              <span>Project Management</span>
-            </div>
-          </div>
-        </div>
-      </section>
+  function setLang(lang) {
+    document.body.classList.remove('lang-both', 'lang-zh-only', 'lang-en-only');
+    const buttons = document.querySelectorAll('.lang-btn');
+    buttons.forEach(b => b.classList.remove('active'));
+    if (lang === 'zh') {
+      document.body.classList.add('lang-zh-only');
+      buttons[1].classList.add('active');
+    } else if (lang === 'en') {
+      document.body.classList.add('lang-en-only');
+      buttons[2].classList.add('active');
+    } else {
+      document.body.classList.add('lang-both');
+      buttons[0].classList.add('active');
+    }
+  }
+</script>
 
-      <section class="section contact-section" id="contact">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="contact.eyebrow">CONTACT</p>
-          <h2 data-i18n="contact.title">Let’s Connect</h2>
-        </div>
-
-        <div class="contact-box">
-          <div>
-            <p data-i18n="contact.nameLabel">Name</p>
-            <span>Jason Chow</span>
-          (Year of birth: 1977)</div>
-          <div>
-            <p data-i18n="contact.emailLabel">Email</p>
-            <a href="mailto:jasonchow739hk@yahoo.com.hk">jasonchow739hk@yahoo.com.hk</a>
-          </div>
-          <div>
-            <p>LinkedIn</p>
-            <a href="https://www.linkedin.com/in/jason-chow-68244957/" target="_blank" rel="noreferrer">linkedin.com/in/jason-chow-68244957</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <script src="script.js"></script>
-  </body>
+</body>
 </html>
